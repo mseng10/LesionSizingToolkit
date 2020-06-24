@@ -51,6 +51,6 @@ setup(
     keywords='ITK InsightToolkit',
     url=r'https://github.com/InsightSoftwareConsortium/LesionSizingToolkit',
     install_requires=[
-        r'itk'
+        r'itk>=5.1.1'
     ]
     )
