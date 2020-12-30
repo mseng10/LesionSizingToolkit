@@ -83,7 +83,7 @@ itkMinimumFeatureAggregatorTest2(int argc, char * argv[])
 
   AggregatorType::Pointer featureAggregator = AggregatorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MinimumFeatureAggregatorSurrogate, MinimumFeatureAggregator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MinimumFeatureAggregatorSurrogate, MinimumFeatureAggregator);
 
 
   using VesselnessGeneratorType = itk::SatoVesselnessSigmoidFeatureGenerator<Dimension>;
@@ -118,7 +118,7 @@ itkMinimumFeatureAggregatorTest2(int argc, char * argv[])
 
   LungWallGeneratorType::InputPixelType lungThreshold = -400;
   lungWallGenerator->SetLungThreshold(lungThreshold);
-  TEST_SET_GET_VALUE(lungThreshold, lungWallGenerator->GetLungThreshold());
+  ITK_TEST_SET_GET_VALUE(lungThreshold, lungWallGenerator->GetLungThreshold());
 
 
   double sigma = 1.0;

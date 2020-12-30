@@ -63,7 +63,7 @@ itkConnectedThresholdSegmentationModuleTest1(int argc, char * argv[])
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     segmentationModule, ConnectedThresholdSegmentationModule, RegionGrowingSegmentationModule);
 
   using InputSpatialObjectType = SegmentationModuleType::InputSpatialObjectType;
@@ -89,7 +89,7 @@ itkConnectedThresholdSegmentationModuleTest1(int argc, char * argv[])
     lowerThreshold = std::stod(argv[4]);
   }
   segmentationModule->SetLowerThreshold(lowerThreshold);
-  TEST_SET_GET_VALUE(lowerThreshold, segmentationModule->GetLowerThreshold());
+  ITK_TEST_SET_GET_VALUE(lowerThreshold, segmentationModule->GetLowerThreshold());
 
   double upperThreshold = 1000;
   if (argc > 5)
@@ -97,7 +97,7 @@ itkConnectedThresholdSegmentationModuleTest1(int argc, char * argv[])
     upperThreshold = std::stod(argv[5]);
   }
   segmentationModule->SetUpperThreshold(upperThreshold);
-  TEST_SET_GET_VALUE(upperThreshold, segmentationModule->GetUpperThreshold());
+  ITK_TEST_SET_GET_VALUE(upperThreshold, segmentationModule->GetUpperThreshold());
 
 
   TRY_EXPECT_NO_EXCEPTION(segmentationModule->Update());

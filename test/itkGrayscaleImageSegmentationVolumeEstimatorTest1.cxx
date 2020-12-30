@@ -32,7 +32,7 @@ itkGrayscaleImageSegmentationVolumeEstimatorTest1(int itkNotUsed(argc), char * i
 
   VolumeEstimatorType::Pointer volumeEstimator = VolumeEstimatorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     volumeEstimator, GrayscaleImageSegmentationVolumeEstimator, SegmentationVolumeEstimator);
 
   using ImageSpatialObjectType = itk::ImageSpatialObject<Dimension>;

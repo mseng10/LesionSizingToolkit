@@ -42,7 +42,7 @@ itkShapeDetectionLevelSetSegmentationModuleTest1(int argc, char * argv[])
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     segmentationModule, ShapeDetectionLevelSetSegmentationModule, SinglePhaseLevelSetSegmentationModule);
 
   using InputImageType = SegmentationModuleType::InputImageType;
@@ -98,7 +98,7 @@ itkShapeDetectionLevelSetSegmentationModuleTest1(int argc, char * argv[])
     propagationScaling = std::stod(argv[4]);
   }
   segmentationModule->SetPropagationScaling(propagationScaling);
-  TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
+  ITK_TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
 
   double curvatureScaling = 1.0;
   if (argc > 5)
@@ -106,7 +106,7 @@ itkShapeDetectionLevelSetSegmentationModuleTest1(int argc, char * argv[])
     curvatureScaling = std::stod(argv[5]);
   }
   segmentationModule->SetCurvatureScaling(curvatureScaling);
-  TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
+  ITK_TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
 
   unsigned int maximumNumberOfIterations = 50;
   if (argc > 6)

@@ -73,7 +73,7 @@ itkLesionSegmentationMethodTest8b(int argc, char * argv[])
 
   SegmentationMethodType::Pointer segmentationMethod = SegmentationMethodType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationMethod, LesionSegmentationImageFilter8, ImageToImageFilter);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationMethod, LesionSegmentationImageFilter8, ImageToImageFilter);
 
 
   segmentationMethod->SetInput(inputImage);

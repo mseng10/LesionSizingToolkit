@@ -131,7 +131,7 @@ itkLesionSegmentationMethodTest4(int argc, char * argv[])
     stoppingTime = std::stod(argv[4]);
   }
   segmentationModule->SetStoppingValue(stoppingTime);
-  TEST_SET_GET_VALUE(stoppingTime, segmentationModule->GetStoppingValue());
+  ITK_TEST_SET_GET_VALUE(stoppingTime, segmentationModule->GetStoppingValue());
 
   double distanceFromSeeds = 5.0;
   if (argc > 5)
@@ -139,7 +139,7 @@ itkLesionSegmentationMethodTest4(int argc, char * argv[])
     distanceFromSeeds = std::stod(argv[5]);
   }
   segmentationModule->SetDistanceFromSeeds(distanceFromSeeds);
-  TEST_SET_GET_VALUE(distanceFromSeeds, segmentationModule->GetDistanceFromSeeds());
+  ITK_TEST_SET_GET_VALUE(distanceFromSeeds, segmentationModule->GetDistanceFromSeeds());
 
 
   lesionSegmentationMethod->SetSegmentationModule(segmentationModule);

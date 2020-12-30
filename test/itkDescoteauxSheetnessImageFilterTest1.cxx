@@ -66,7 +66,7 @@ itkDescoteauxSheetnessImageFilterTest1(int argc, char * argv[])
 
   FilterType::Pointer sheetnessFilter = FilterType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(sheetnessFilter, DescoteauxSheetnessImageFilter, UnaryFunctorImageFilter);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(sheetnessFilter, DescoteauxSheetnessImageFilter, UnaryFunctorImageFilter);
 
   hessian->SetInput(reader->GetOutput());
   eigen->SetInput(hessian->GetOutput());
@@ -87,7 +87,7 @@ itkDescoteauxSheetnessImageFilterTest1(int argc, char * argv[])
     hessian->SetSigma(std::stod(argv[4]));
   }
   hessian->SetSigma(sigma);
-  TEST_SET_GET_VALUE(sigma, hessian->GetSigma());
+  ITK_TEST_SET_GET_VALUE(sigma, hessian->GetSigma());
 
   double sheetnessNormalization = 0.5;
   if (argc > 5)
@@ -95,7 +95,7 @@ itkDescoteauxSheetnessImageFilterTest1(int argc, char * argv[])
     sheetnessNormalization = std::stod(argv[5]);
   }
   sheetnessFilter->SetSheetnessNormalization(sheetnessNormalization);
-  // TEST_SET_GET_VALUE( sheetnessNormalization, sheetnessFilter->GetSheetnessNormalization() );
+  // ITK_TEST_SET_GET_VALUE( sheetnessNormalization, sheetnessFilter->GetSheetnessNormalization() );
 
   double bloobinessNormalization = 2.0;
   if (argc > 6)
@@ -103,7 +103,7 @@ itkDescoteauxSheetnessImageFilterTest1(int argc, char * argv[])
     bloobinessNormalization = std::stod(argv[6]);
   }
   sheetnessFilter->SetBloobinessNormalization(bloobinessNormalization);
-  // TEST_SET_GET_VALUE( bloobinessNormalization, sheetnessFilter->GetBloobinessNormalization() );
+  // ITK_TEST_SET_GET_VALUE( bloobinessNormalization, sheetnessFilter->GetBloobinessNormalization() );
 
   double noiseNormalization = 1.0;
   if (argc > 7)
@@ -111,7 +111,7 @@ itkDescoteauxSheetnessImageFilterTest1(int argc, char * argv[])
     noiseNormalization = std::stod(argv[7]);
   }
   sheetnessFilter->SetNoiseNormalization(noiseNormalization);
-  // TEST_SET_GET_VALUE( noiseNormalization, sheetnessFilter->GetNoiseNormalization() );
+  // ITK_TEST_SET_GET_VALUE( noiseNormalization, sheetnessFilter->GetNoiseNormalization() );
 
 
   eigen->SetDimension(Dimension);

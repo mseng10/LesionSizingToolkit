@@ -126,7 +126,7 @@ itkLesionSegmentationMethodTest5(int argc, char * argv[])
   using SegmentationModuleType = itk::ShapeDetectionLevelSetSegmentationModule<Dimension>;
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     segmentationModule, ShapeDetectionLevelSetSegmentationModule, SinglePhaseLevelSetSegmentationModule);
 
 
@@ -136,7 +136,7 @@ itkLesionSegmentationMethodTest5(int argc, char * argv[])
     maximumRMSError = std::stod(argv[4]);
   }
   segmentationModule->SetMaximumRMSError(maximumRMSError);
-  TEST_SET_GET_VALUE(maximumRMSError, segmentationModule->GetMaximumRMSError());
+  ITK_TEST_SET_GET_VALUE(maximumRMSError, segmentationModule->GetMaximumRMSError());
 
   unsigned int maximumNumberOfIterations = 300;
   if (argc > 5)
@@ -144,7 +144,7 @@ itkLesionSegmentationMethodTest5(int argc, char * argv[])
     maximumNumberOfIterations = std::stoi(argv[5]);
   }
   segmentationModule->SetMaximumNumberOfIterations(maximumNumberOfIterations);
-  TEST_SET_GET_VALUE(maximumNumberOfIterations, segmentationModule->GetMaximumNumberOfIterations());
+  ITK_TEST_SET_GET_VALUE(maximumNumberOfIterations, segmentationModule->GetMaximumNumberOfIterations());
 
   double curvatureScaling = 1.0;
   if (argc > 6)
@@ -152,7 +152,7 @@ itkLesionSegmentationMethodTest5(int argc, char * argv[])
     curvatureScaling = std::stod(argv[6]);
   }
   segmentationModule->SetCurvatureScaling(curvatureScaling);
-  TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
+  ITK_TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
 
   double propagationScaling = 500.0;
   if (argc > 7)
@@ -160,7 +160,7 @@ itkLesionSegmentationMethodTest5(int argc, char * argv[])
     propagationScaling = std::stod(argv[7]);
   }
   segmentationModule->SetPropagationScaling(propagationScaling);
-  TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
+  ITK_TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
 
 
   lesionSegmentationMethod->SetSegmentationModule(segmentationModule);

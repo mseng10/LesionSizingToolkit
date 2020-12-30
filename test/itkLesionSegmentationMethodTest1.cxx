@@ -30,7 +30,7 @@ itkLesionSegmentationMethodTest1(int itkNotUsed(argc), char * itkNotUsed(argv)[]
 
   MethodType::Pointer segmentationMethod = MethodType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationMethod, LesionSegmentationMethod, ProcessObject);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationMethod, LesionSegmentationMethod, ProcessObject);
 
   using ImageMaskSpatialObjectType = itk::ImageMaskSpatialObject<Dimension>;
 

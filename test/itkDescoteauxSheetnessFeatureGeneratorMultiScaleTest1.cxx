@@ -60,7 +60,7 @@ itkDescoteauxSheetnessFeatureGeneratorMultiScaleTest1(int argc, char * argv[])
 
   AggregatorType::Pointer featureAggregator = AggregatorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MaximumFeatureAggregator, UnaryFunctorImageFilter);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MaximumFeatureAggregator, UnaryFunctorImageFilter);
 
   using DescoteauxSheetnessFeatureGeneratorType = itk::DescoteauxSheetnessFeatureGenerator<Dimension>;
   using SpatialObjectType = DescoteauxSheetnessFeatureGeneratorType::SpatialObjectType;
@@ -84,7 +84,7 @@ itkDescoteauxSheetnessFeatureGeneratorMultiScaleTest1(int argc, char * argv[])
 
     double sigma = smallestSigma * octave;
     featureGenerator->SetSigma(sigma);
-    TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
+    ITK_TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
 
     double sheetnessNormalization = 0.5;
     if (argc > 6)
@@ -92,7 +92,7 @@ itkDescoteauxSheetnessFeatureGeneratorMultiScaleTest1(int argc, char * argv[])
       sheetnessNormalization = std::stod(argv[6]);
     }
     featureGenerator->SetSheetnessNormalization(sheetnessNormalization);
-    // TEST_SET_GET_VALUE( sheetnessNormalization, featureGenerator->GetSheetnessNormalization() );
+    // ITK_TEST_SET_GET_VALUE( sheetnessNormalization, featureGenerator->GetSheetnessNormalization() );
 
     double bloobinessNormalization = 2.0;
     if (argc > 7)
@@ -100,7 +100,7 @@ itkDescoteauxSheetnessFeatureGeneratorMultiScaleTest1(int argc, char * argv[])
       bloobinessNormalization = std::stod(argv[7]);
     }
     featureGenerator->SetBloobinessNormalization(bloobinessNormalization);
-    // TEST_SET_GET_VALUE( bloobinessNormalization, featureGenerator->GetBloobinessNormalization() );
+    // ITK_TEST_SET_GET_VALUE( bloobinessNormalization, featureGenerator->GetBloobinessNormalization() );
 
     double noiseNormalization = 1.0;
     if (argc > 8)
@@ -108,7 +108,7 @@ itkDescoteauxSheetnessFeatureGeneratorMultiScaleTest1(int argc, char * argv[])
       noiseNormalization = std::stod(argv[8]);
     }
     featureGenerator->SetNoiseNormalization(noiseNormalization);
-    // TEST_SET_GET_VALUE( noiseNormalization, featureGenerator->GetNoiseNormalization() );
+    // ITK_TEST_SET_GET_VALUE( noiseNormalization, featureGenerator->GetNoiseNormalization() );
 
     octave *= 2;
 

@@ -53,7 +53,7 @@ itkMaximumFeatureAggregatorTest1(int argc, char * argv[])
 
   AggregatorType::Pointer featureAggregator = AggregatorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MaximumFeatureAggregator, FeatureAggregator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureAggregator, MaximumFeatureAggregator, FeatureAggregator);
 
   using VesselnessGeneratorType = itk::SatoVesselnessSigmoidFeatureGenerator<Dimension>;
   VesselnessGeneratorType::Pointer vesselnessGenerator = VesselnessGeneratorType::New();

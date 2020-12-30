@@ -67,7 +67,7 @@ itkLandmarksReaderTest1(int argc, char * argv[])
 
   SpatialObjectReaderType::Pointer landmarkPointsReader = SpatialObjectReaderType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(landmarkPointsReader, SpatialObjectReader, Object);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(landmarkPointsReader, SpatialObjectReader, Object);
 
   landmarkPointsReader->SetFileName(argv[1]);
   landmarkPointsReader->Update();

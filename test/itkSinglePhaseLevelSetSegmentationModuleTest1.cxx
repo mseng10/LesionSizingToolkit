@@ -30,7 +30,7 @@ itkSinglePhaseLevelSetSegmentationModuleTest1(int itkNotUsed(argc), char * itkNo
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationModule, SinglePhaseLevelSetSegmentationModule, SegmentationModule);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationModule, SinglePhaseLevelSetSegmentationModule, SegmentationModule);
 
   using ImageSpatialObjectType = itk::ImageSpatialObject<Dimension>;
 
@@ -44,7 +44,7 @@ itkSinglePhaseLevelSetSegmentationModuleTest1(int itkNotUsed(argc), char * itkNo
 
   constexpr double propagationScaling = 1.3;
   segmentationModule->SetPropagationScaling(propagationScaling);
-  TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
+  ITK_TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
 
   constexpr double curvatureScaling = 1.7;
   segmentationModule->SetCurvatureScaling(curvatureScaling);

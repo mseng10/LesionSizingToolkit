@@ -63,7 +63,7 @@ itkCannyEdgesDistanceAdvectionFieldFeatureGeneratorTest1(int argc, char * argv[]
   CannyEdgesDistanceAdvectionFieldFeatureGeneratorType::Pointer featureGenerator =
     CannyEdgesDistanceAdvectionFieldFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, CannyEdgesDistanceAdvectionFieldFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, CannyEdgesDistanceAdvectionFieldFeatureGenerator, FeatureGenerator);
 
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
@@ -83,7 +83,7 @@ itkCannyEdgesDistanceAdvectionFieldFeatureGeneratorTest1(int argc, char * argv[]
     sigma = std::stod(argv[3]);
   }
   featureGenerator->SetSigma(sigma);
-  TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
+  ITK_TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
 
   double upperThreshold =
     itk::NumericTraits<CannyEdgesDistanceAdvectionFieldFeatureGeneratorType::InternalPixelType>::max();

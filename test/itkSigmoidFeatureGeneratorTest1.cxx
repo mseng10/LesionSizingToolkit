@@ -58,7 +58,7 @@ itkSigmoidFeatureGeneratorTest1(int argc, char * argv[])
 
   SigmoidFeatureGeneratorType::Pointer featureGenerator = SigmoidFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, SigmoidFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, SigmoidFeatureGenerator, FeatureGenerator);
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
 
@@ -76,7 +76,7 @@ itkSigmoidFeatureGeneratorTest1(int argc, char * argv[])
     alpha = std::stod(argv[3]);
   }
   featureGenerator->SetAlpha(alpha);
-  TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
+  ITK_TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
 
   double beta = 100.0;
   if (argc > 4)
@@ -84,7 +84,7 @@ itkSigmoidFeatureGeneratorTest1(int argc, char * argv[])
     beta = std::stod(argv[4]);
   }
   featureGenerator->SetBeta(beta);
-  TEST_SET_GET_VALUE(beta, featureGenerator->GetBeta());
+  ITK_TEST_SET_GET_VALUE(beta, featureGenerator->GetBeta());
 
 
   TRY_EXPECT_NO_EXCEPTION(featureGenerator->Update());

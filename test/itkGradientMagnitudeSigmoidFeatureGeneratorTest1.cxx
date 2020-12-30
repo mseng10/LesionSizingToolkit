@@ -60,7 +60,7 @@ itkGradientMagnitudeSigmoidFeatureGeneratorTest1(int argc, char * argv[])
   GradientMagnitudeSigmoidFeatureGeneratorType::Pointer featureGenerator =
     GradientMagnitudeSigmoidFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, GradientMagnitudeSigmoidFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, GradientMagnitudeSigmoidFeatureGenerator, FeatureGenerator);
 
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
@@ -80,7 +80,7 @@ itkGradientMagnitudeSigmoidFeatureGeneratorTest1(int argc, char * argv[])
     sigma = std::stod(argv[3]);
   }
   featureGenerator->SetSigma(sigma);
-  TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
+  ITK_TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
 
   double alpha = -1.0;
   if (argc > 4)
@@ -88,7 +88,7 @@ itkGradientMagnitudeSigmoidFeatureGeneratorTest1(int argc, char * argv[])
     alpha = std::stod(argv[4]);
   }
   featureGenerator->SetAlpha(alpha);
-  TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
+  ITK_TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
 
   double beta = 128;
   if (argc > 5)
@@ -96,7 +96,7 @@ itkGradientMagnitudeSigmoidFeatureGeneratorTest1(int argc, char * argv[])
     beta = std::stod(argv[5]);
   }
   featureGenerator->SetBeta(beta);
-  TEST_SET_GET_VALUE(beta, featureGenerator->GetBeta());
+  ITK_TEST_SET_GET_VALUE(beta, featureGenerator->GetBeta());
 
 
   TRY_EXPECT_NO_EXCEPTION(featureGenerator->Update());

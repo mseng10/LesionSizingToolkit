@@ -155,7 +155,7 @@ itkLesionSegmentationMethodTest8(int argc, char * argv[])
   using SegmentationModuleType = itk::FastMarchingAndGeodesicActiveContourLevelSetSegmentationModule<Dimension>;
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationModule,
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationModule,
                                 FastMarchingAndGeodesicActiveContourLevelSetSegmentationModule,
                                 SinglePhaseLevelSetSegmentationModule);
 

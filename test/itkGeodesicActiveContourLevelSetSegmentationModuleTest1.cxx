@@ -41,7 +41,7 @@ itkGeodesicActiveContourLevelSetSegmentationModuleTest1(int argc, char * argv[])
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     segmentationModule, GeodesicActiveContourLevelSetSegmentationModule, SinglePhaseLevelSetSegmentationModule);
 
 
@@ -84,7 +84,7 @@ itkGeodesicActiveContourLevelSetSegmentationModuleTest1(int argc, char * argv[])
     advectionScaling = std::stod(argv[4]);
   }
   segmentationModule->SetAdvectionScaling(advectionScaling);
-  TEST_SET_GET_VALUE(advectionScaling, segmentationModule->GetAdvectionScaling());
+  ITK_TEST_SET_GET_VALUE(advectionScaling, segmentationModule->GetAdvectionScaling());
 
   double curvatureScaling = 1.0;
   if (argc > 5)
@@ -92,7 +92,7 @@ itkGeodesicActiveContourLevelSetSegmentationModuleTest1(int argc, char * argv[])
     curvatureScaling = std::stod(argv[5]);
   }
   segmentationModule->SetCurvatureScaling(curvatureScaling);
-  TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
+  ITK_TEST_SET_GET_VALUE(curvatureScaling, segmentationModule->GetCurvatureScaling());
 
   double propagationScaling = 100.0;
   if (argc > 6)
@@ -100,7 +100,7 @@ itkGeodesicActiveContourLevelSetSegmentationModuleTest1(int argc, char * argv[])
     propagationScaling = std::stod(argv[6]);
   }
   segmentationModule->SetPropagationScaling(propagationScaling);
-  TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
+  ITK_TEST_SET_GET_VALUE(propagationScaling, segmentationModule->GetPropagationScaling());
 
   unsigned int maximumNumberOfIterations = 100;
   if (argc > 7)

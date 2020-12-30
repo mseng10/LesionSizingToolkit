@@ -71,7 +71,7 @@ itkVotingBinaryHoleFillFloodingImageFilterTest1(int argc, char * argv[])
 
   FilterType::Pointer filter = FilterType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(filter, VotingBinaryHoleFillFloodingImageFilter, VotingBinaryImageFilter);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(filter, VotingBinaryHoleFillFloodingImageFilter, VotingBinaryImageFilter);
 
 
   const unsigned int radius = std::stoi(argv[4]);
@@ -93,7 +93,7 @@ itkVotingBinaryHoleFillFloodingImageFilterTest1(int argc, char * argv[])
 
   const unsigned int maximumNumberOfIterations = std::stoi(argv[6]);
   filter->SetMaximumNumberOfIterations(maximumNumberOfIterations);
-  TEST_SET_GET_VALUE(maximumNumberOfIterations, filter->GetMaximumNumberOfIterations());
+  ITK_TEST_SET_GET_VALUE(maximumNumberOfIterations, filter->GetMaximumNumberOfIterations());
 
   thresholder->SetInput(reader->GetOutput());
   filter->SetInput(thresholder->GetOutput());

@@ -59,7 +59,7 @@ itkSatoLocalStructureFeatureGeneratorTest1(int argc, char * argv[])
 
   SatoLocalStructureFeatureGeneratorType::Pointer featureGenerator = SatoLocalStructureFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, SatoLocalStructureFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, SatoLocalStructureFeatureGenerator, FeatureGenerator);
 
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
@@ -79,7 +79,7 @@ itkSatoLocalStructureFeatureGeneratorTest1(int argc, char * argv[])
     sigma = std::stod(argv[3]);
   }
   featureGenerator->SetSigma(sigma);
-  TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
+  ITK_TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
 
   double alpha = 0.5;
   if (argc > 4)
@@ -87,7 +87,7 @@ itkSatoLocalStructureFeatureGeneratorTest1(int argc, char * argv[])
     alpha = std::stod(argv[4]);
   }
   featureGenerator->SetAlpha(alpha);
-  TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
+  ITK_TEST_SET_GET_VALUE(alpha, featureGenerator->GetAlpha());
 
   double gamma = 2.0;
   if (argc > 5)
@@ -95,7 +95,7 @@ itkSatoLocalStructureFeatureGeneratorTest1(int argc, char * argv[])
     gamma = std::stod(argv[5]);
   }
   featureGenerator->SetGamma(gamma);
-  TEST_SET_GET_VALUE(gamma, featureGenerator->GetGamma());
+  ITK_TEST_SET_GET_VALUE(gamma, featureGenerator->GetGamma());
 
 
   TRY_EXPECT_NO_EXCEPTION(featureGenerator->Update());

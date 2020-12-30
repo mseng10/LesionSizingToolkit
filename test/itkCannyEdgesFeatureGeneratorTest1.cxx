@@ -57,7 +57,7 @@ itkCannyEdgesFeatureGeneratorTest1(int argc, char * argv[])
 
   CannyEdgesFeatureGeneratorType::Pointer featureGenerator = CannyEdgesFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, CannyEdgesFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, CannyEdgesFeatureGenerator, FeatureGenerator);
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
 
@@ -76,7 +76,7 @@ itkCannyEdgesFeatureGeneratorTest1(int argc, char * argv[])
     sigma = std::stod(argv[3]);
   }
   featureGenerator->SetSigma(sigma);
-  TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
+  ITK_TEST_SET_GET_VALUE(sigma, featureGenerator->GetSigma());
 
   double upperThreshold = 200;
   if (argc > 4)
@@ -84,7 +84,7 @@ itkCannyEdgesFeatureGeneratorTest1(int argc, char * argv[])
     upperThreshold = std::stod(argv[4]);
   }
   featureGenerator->SetUpperThreshold(upperThreshold);
-  TEST_SET_GET_VALUE(upperThreshold, featureGenerator->GetUpperThreshold());
+  ITK_TEST_SET_GET_VALUE(upperThreshold, featureGenerator->GetUpperThreshold());
 
   double lowerThreshold = 100;
   if (argc > 5)
@@ -92,7 +92,7 @@ itkCannyEdgesFeatureGeneratorTest1(int argc, char * argv[])
     lowerThreshold = std::stod(argv[5]);
   }
   featureGenerator->SetLowerThreshold(lowerThreshold);
-  TEST_SET_GET_VALUE(lowerThreshold, featureGenerator->GetLowerThreshold());
+  ITK_TEST_SET_GET_VALUE(lowerThreshold, featureGenerator->GetLowerThreshold());
 
   TRY_EXPECT_NO_EXCEPTION(featureGenerator->Update());
 

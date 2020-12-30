@@ -58,7 +58,7 @@ itkBinaryThresholdFeatureGeneratorTest1(int argc, char * argv[])
 
   BinaryThresholdFeatureGeneratorType::Pointer featureGenerator = BinaryThresholdFeatureGeneratorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, BinaryThresholdFeatureGenerator, FeatureGenerator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(featureGenerator, BinaryThresholdFeatureGenerator, FeatureGenerator);
 
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();
@@ -77,7 +77,7 @@ itkBinaryThresholdFeatureGeneratorTest1(int argc, char * argv[])
     threshold = std::stod(argv[3]);
   }
   featureGenerator->SetThreshold(threshold);
-  TEST_SET_GET_VALUE(threshold, featureGenerator->GetThreshold());
+  ITK_TEST_SET_GET_VALUE(threshold, featureGenerator->GetThreshold());
 
   TRY_EXPECT_NO_EXCEPTION(featureGenerator->Update());
 

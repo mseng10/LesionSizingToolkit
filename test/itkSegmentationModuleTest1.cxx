@@ -30,7 +30,7 @@ itkSegmentationModuleTest1(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationModule, SegmentationModule, ProcessObject);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationModule, SegmentationModule, ProcessObject);
 
 
   using ImageSpatialObjectType = itk::ImageSpatialObject<Dimension>;

@@ -73,7 +73,7 @@ itkLesionSegmentationMethodTest10(int argc, char * argv[])
 
   MethodType::Pointer lesionSegmentationMethod = MethodType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(lesionSegmentationMethod, LesionSegmentationMethod, LightObject);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(lesionSegmentationMethod, LesionSegmentationMethod, LightObject);
 
 
   using ImageMaskSpatialObjectType = itk::ImageMaskSpatialObject<Dimension>;
@@ -173,7 +173,7 @@ itkLesionSegmentationMethodTest10(int argc, char * argv[])
   using SegmentationModuleType = itk::FastMarchingAndGeodesicActiveContourLevelSetSegmentationModule<Dimension>;
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(segmentationModule,
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(segmentationModule,
                                 FastMarchingAndGeodesicActiveContourLevelSetSegmentationModule,
                                 SinglePhaseLevelSetSegmentationModule);
 

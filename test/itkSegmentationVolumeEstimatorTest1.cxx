@@ -50,7 +50,7 @@ itkSegmentationVolumeEstimatorTest1(int itkNotUsed(argc), char * itkNotUsed(argv
 
   VolumeEstimatorType::Pointer volumeEstimator = VolumeEstimatorType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(volumeEstimator, VolumeEstimatorSurrogate, SegmentationVolumeEstimator);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(volumeEstimator, VolumeEstimatorSurrogate, SegmentationVolumeEstimator);
 
   using ImageSpatialObjectType = itk::ImageSpatialObject<Dimension>;
 

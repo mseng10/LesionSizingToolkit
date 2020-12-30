@@ -59,7 +59,7 @@ itkIsotropicResamplerTest1(int argc, char * argv[])
 
   ResampleFilterType::Pointer resampler = ResampleFilterType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(resampler, IsotropicResampler, ProcessObject);
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(resampler, IsotropicResampler, ProcessObject);
 
 
   InputImageSpatialObjectType::Pointer inputObject = InputImageSpatialObjectType::New();

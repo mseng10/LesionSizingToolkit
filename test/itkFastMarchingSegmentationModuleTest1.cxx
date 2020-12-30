@@ -61,7 +61,7 @@ itkFastMarchingSegmentationModuleTest1(int argc, char * argv[])
 
   SegmentationModuleType::Pointer segmentationModule = SegmentationModuleType::New();
 
-  EXERCISE_BASIC_OBJECT_METHODS(
+  ITK_EXERCISE_BASIC_OBJECT_METHODS(
     segmentationModule, FastMarchingSegmentationModule, SinglePhaseLevelSetSegmentationModule);
 
   using InputSpatialObjectType = SegmentationModuleType::InputSpatialObjectType;
@@ -85,7 +85,7 @@ itkFastMarchingSegmentationModuleTest1(int argc, char * argv[])
     stoppingTime = std::stod(argv[4]);
   }
   segmentationModule->SetStoppingValue(stoppingTime);
-  TEST_SET_GET_VALUE(stoppingTime, segmentationModule->GetStoppingValue());
+  ITK_TEST_SET_GET_VALUE(stoppingTime, segmentationModule->GetStoppingValue());
 
   double distanceFromSeeds = 5.0;
   if (argc > 5)
@@ -93,7 +93,7 @@ itkFastMarchingSegmentationModuleTest1(int argc, char * argv[])
     distanceFromSeeds = std::stod(argv[5]);
   }
   segmentationModule->SetDistanceFromSeeds(distanceFromSeeds);
-  TEST_SET_GET_VALUE(distanceFromSeeds, segmentationModule->GetDistanceFromSeeds());
+  ITK_TEST_SET_GET_VALUE(distanceFromSeeds, segmentationModule->GetDistanceFromSeeds());
 
 
   TRY_EXPECT_NO_EXCEPTION(segmentationModule->Update());
